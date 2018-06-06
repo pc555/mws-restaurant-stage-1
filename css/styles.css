@@ -116,6 +116,7 @@ nav h1 a {
   font-weight: normal;
   line-height: 1;
   margin: 0 20px;
+  display: inline;
 }
 .filter-options select {
   background-color: white;
@@ -136,6 +137,8 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -272,4 +275,48 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* For phone */
+@media screen and (max-width:599px) {
+  #restaurants-list li {
+    margin:10px 0 0 2%;
+    width: 100%;
+    font-size: 1.2em;
+  }
+
+  .filter-options select {
+    font-size: 1em;
+    width: 42%;
+  }
+  
+  .filter-options {
+    padding: 10px 0px 18px 0px;
+  }
+  
+  .filter-options h2 {
+    display: block;
+  }
+  
+}
+
+/* For tablet */
+@media screen and (min-width: 600px) {
+  #restaurants-list li {
+    margin:10px 0 0 2%;
+    width: calc(100% * (1/3) - 10px - 1px);
+  }
+}
+
+/* For tablet-landscape-up */
+@media screen and (min-width: 900px) {
+  #restaurants-list li {
+    margin:10px 0 0 2%;
+    width: calc(100% * (1/4) - 10px - 1px);
+  }
+}
+
+/* For for-desktop-up */
+@media screen and (min-width: 1200px) {
+
 }
