@@ -138,10 +138,18 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
+  //Create picture tag and load smaller image when screen size is small
+  const picture = document.createElement('picture');
+  const source = document.createElement('source');
+  source.media = '(max-width: 599px)';
+  source.srcset = `/img/${restaurant.id}_small.jpg`;
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  li.append(image);
+  image.alt = `Photo of restaurant ${restaurant.name}`;
+  picture.append(source);
+  picture.append(image);
+  li.append(picture);
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
