@@ -20,7 +20,6 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
-        console.log(`request: ${event.request}, returning from cache!`);
         // Return response from cache
         if (response) {
           return response;
